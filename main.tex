@@ -1,0 +1,180 @@
+\documentclass[12pt]{amsart}
+
+\input{preamble.tex}
+%\input{mathmacros.tex}
+%\input{authors.tex}
+
+\newcommand\Wh[1]{\textsc{Wh}-#1}
+\newcommand\Ja[1]{\textsc{Ja}-#1}
+\title{Winter Local Langlands \textsc{\Wh{5}}}
+
+
+\newcommand\LT{\mathfrak{LT}}
+\newcommand\LN{\mathfrak{LN}}
+\newcommand\LNm{\mathfrak{L}(\mathfrak{N}^-)}
+\newcommand\Lnm{\mathfrak{L}(\mathfrak{n}^-)}
+\newcommand\LG{\mathfrak{LG}}
+\newcommand\Bun{\mathbf{Bun}}
+\newcommand\afftmod{\hat{\mathfrak{t}}-\mathbf{Mod}}
+\newcommand\affgmod{\hat{\mathfrak{g}}-\mathbf{Mod}}
+\newcommand\Gr{\mathbf{Gr}}
+\newcommand\KL{\mathbf{KL}}
+\newcommand\Whit{\mathbf{Whit}}
+\newcommand\neglv{-\kappa}
+\newcommand\poslv{\kappa}
+\newcommand\dneglv{-\check{\kappa}}
+\newcommand\dposlv{\check{\kappa}}
+
+\begin{document}
+
+  %%%%%%%%%%%%%%%%
+  %% Title etc. %%
+  %%
+
+\begin{abstract}The purpose of this talk (\Wh{5}) is two-fold: first we will set
+up the context needed to attack the FLE; second, we will address material needed
+for the local-to-global compatibilities to be discussed in \Ja{4}.\end{abstract}
+
+  \maketitle
+  %\tableofcontents
+  %\mbox{}
+  %\input{nomenclature.tex}
+  %\printnomenclature
+
+  %%%%%%%%%%%%%%%%%%%%%%
+  %% body of document %%
+  %%
+
+
+  % \begin{rmk}
+  %   This talk has been cut down due to a change in the planned exposition.
+  % \end{rmk}
+
+\section{The formal setting}
+
+  We begin by addressing the formal setting: Recall that we have introduced two
+  forms of the FLE (at positive and negative levels
+  respectively).\\
+
+
+  We begin at the negative level\footnotemark; when we set out to prove the FLE
+  we want to relate the Kazhdan-Lusztig category for $G$ and Whittaker category
+  for $\Gr_{\check{G}}$ to the corresponding categories for the Torus; this
+  relation takes the form of a diagram:
+
+  \begin{tikzcd}
+    \KL(G)_{\neglv} \arrow[d,"j_!^{KM,Lus}"] \arrow[r,"FLE_G" description]
+     & \Whit_{\dneglv}(\Gr_{\check{G}}) \arrow[d, "j_!^{Whit,Lus}"] \\
+     \KL(T)_{\neglv} \arrow[r, "\sim", "FLE_T"] & \Whit_{\dneglv}(\Gr_{\check{T}}) \\
+  \end{tikzcd}
+
+  \footnotetext{Recall that by convention
+    $\kappa$ denotes positive level, hence $-\kappa$ is used for negative
+  level.}
+
+  The desired vertical functors should make the diagram commute, be factorizable
+  and by applying these functors to the units on both sides we expect to obtain
+  the factorization algebras constituting the subject of the last talk.
+  Morevover, the factorizable algebras should match up under the bottom
+  isomorphism, but it will \textbf{not} be the case that the induced map on
+  factorization module categories will be an equivalence.
+  % insert some discussion
+
+  The essential thrust of the last talk will be a conjectural bootstrapping of
+  an equivalence given what structure we do have apparent here.
+
+  \begin{rmk}
+    We saw in \Ja{3} the definition of the functor $j_!^{KM,Lus}$. Note the
+    designation of \textit{Lus} in contrast to the existence of a more naive
+    functor corresponding to the de-Concini-Kac form of the quantum group, which
+    will not produce the correct diagram. %more commentary
+  \end{rmk}
+
+  % TODO check to see if Lin's notes defines both Whit and KM sides
+
+  We still need a definition of the functor $j_!^{Whit,Lus}$. First, we'll drop
+  the notation \textit{Lus}\footnotemark\footnotetext{reserving this notation
+    for the factorization algebra as in $\Omega_q^{Lus}$ arising as the image of
+  the unit under the functor $j_!^{KM}$} and define another functor
+  $j_{!*}^{Whit}$; this new functor also
+  has an incarnation on the Kac-Moody side as $j_{!*}^{KM}$, giving a diagram:
+
+  \begin{tikzcd}
+    \KL(G)_{\neglv} \arrow[transform
+    canvas={xshift=0.9ex},d,"j_{!*}^{KM}"]\arrow[transform
+    canvas={xshift=-0.4ex}, d,"j_!^{KM}"] \arrow[r,"FLE_G" description]
+    & \Whit_{\dneglv}(\Gr_{\check{G}}) \arrow[transform
+    canvas={xshift=0.9ex},d, "j_{!*}^{Whit}"]\arrow[transform
+    canvas={xshift=-0.4ex}, d, "j_!^{Whit}"] \\
+     \KL(T)_{\neglv} \arrow[r, "\sim", "FLE_T"] & \Whit_{\dneglv}(\Gr_{\check{T}}) \\
+  \end{tikzcd}
+
+  We can similarly express the corresponding diagram at positive level:
+
+  \begin{tikzcd}
+    \KL(G)_{\poslv} \arrow[transform
+    canvas={xshift=0.9ex},d,"j_{!*}^{KM}"]\arrow[transform
+    canvas={xshift=-0.4ex}, d,"j_!^{KM}"] \arrow[r,"\tilde{FLE}_G" description]
+    & \Whit_{\dposlv}(\Gr_{\check{G}}) \arrow[transform
+    canvas={xshift=0.9ex},d, "j_{!*}^{Whit}"]\arrow[transform
+    canvas={xshift=-0.4ex}, d, "j_!^{Whit}"] \\
+    \KL(T)_{\poslv} \arrow[r, "\sim", "\tilde{FLE}_T"] & \Whit_{\dposlv}(\Gr_{\check{T}}) \\
+  \end{tikzcd}
+
+  As we have seen, for the torus there is no disctinction between FLE for
+  positive and negative levels (recall positivity refers to the killing form on
+  simple factors.) However, on the Kac-Moody side, these functors will differ by
+  a Cartan involution. In contrast, since the Whittaker category is geometric,
+  it does not see the distinction between positive and negative level; the main
+  features of these functors on the Whittaker side will be the same as at the
+  negative level. As we saw in \Ja{3}, these functors on the Kac-Moody
+  side strongly depend on the positivity or negativity of the level, while on
+  the Whittaker side they do not.\\
+
+  \begin{rmk}
+    What was referred to as $j_*$ in \Ja{3} (in relation to $C_*$ semi-infinite
+    cohomology) at positive level is here $j_!$.
+    % TODO clarify
+  \end{rmk}
+
+  In the next section we will recall definitions of a subset of these functors
+  (for the rest, and in greater detail, see \Ja{3}).
+
+  \begin{rmk}
+    We can express the plan for \Ja{4} in terms of these FLE diagrams for
+    negative and positive level: to see this, note that all of these local
+    categories are related to the corresponding global categories
+    ($\Bun(G),\Bun(\check{G}) \Bun(T),\Bun(\check{T})$, and similarly for
+    parabolics and their levi factors etc.\ ), such that there analogously
+    exist functors relating these global categories. \Ja{4} will describe the
+    interaction of these global categories equipped with global functors and
+    their compatabilities and interactions with variants of the Eisenstein
+    series and constant term functors. We will see that the structure amounts
+    in the global setting to a series of commutative cubes.
+  \end{rmk}
+
+\section{Recollections on definitions of the functors $j_!$ and $j_{!*}$}
+\subsection{$j_{\{!,!*\}}^{KM}$ at the positive level}
+Let us begin by recalling from \Ja{3} the
+semi-infinite cohomology functor
+
+  $$C_* = C^{\frac{\infty}{2}}(\Lnm^+, -),$$
+
+  in terms of which we can define $j_!^{KM}$ and $j_{!*}^{KM}$, via the following diagram:
+
+% TODO swap to more traditional N^-(K)T(O) notation?
+  \begin{tikzcd}
+    j_{\{!,!*\}}^{KM} : \affgmod_{\poslv}^{\LG^+} \ar[equal, d] \arrow[r, transform
+    canvas={yshift=0.9ex}, "\phi_!"] \arrow[r, transform
+    canvas={yshift=-0.4ex}, "\phi_{!*}"]&
+    (\affgmod_{\poslv})_{\LNm\LT^+} \arrow[r, "C_*"] &
+      (\afftmod_{\poslv})_{\LT^+} \ar[equal, d] \\
+    \KL(G)_{\poslv}  & & \KL(T)_{\poslv} \\
+  \end{tikzcd}
+
+Here we have used the fact that invariants and co-invariants are the same, as
+well as the fact that $C_*$ is well-behaved at the positive level. Thus we have
+reduced the definition of $j_!^{KM}$ and $j_{!*}^{KM}$ to the specification of
+$\phi_!$ and $\phi_{!*}$.
+
+\end{document}
