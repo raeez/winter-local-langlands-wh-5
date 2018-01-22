@@ -17,7 +17,10 @@
 \newcommand\Bun{\mathbf{Bun}}
 \newcommand\afftmod{\hat{\mathfrak{t}}-\mathbf{Mod}}
 \newcommand\affgmod{\hat{\mathfrak{g}}-\mathbf{Mod}}
+\newcommand\DMod{\mathbf{Dmod}}
+\newcommand\IC{\mathbf{IC}}
 \newcommand\Gr{\mathbf{Gr}}
+\newcommand\semiinf{\frac{\infty}{2}}
 \newcommand\KL{\mathbf{KL}}
 \newcommand\Whit{\mathbf{Whit}}
 \newcommand\neglv{-\kappa}
@@ -101,11 +104,11 @@ for the local-to-global compatibilities to be discussed in \Ja{4}.\end{abstract}
 
   \begin{tikzcd}
     \KL(G)_{\neglv} \arrow[transform
-    canvas={xshift=0.9ex},d,"j_{!*}^{KM}"]\arrow[transform
-    canvas={xshift=-0.4ex}, d,"j_!^{KM}"] \arrow[r,"FLE_G" description]
+    canvas={xshift=1.9ex},d,"j_{!*}^{KM}"]\arrow[transform
+    canvas={xshift=-1.9ex}, d,"j_!^{KM}"] \arrow[r,"FLE_G" description]
     & \Whit_{\dneglv}(\Gr_{\check{G}}) \arrow[transform
-    canvas={xshift=0.9ex},d, "j_{!*}^{Whit}"]\arrow[transform
-    canvas={xshift=-0.4ex}, d, "j_!^{Whit}"] \\
+    canvas={xshift=1.9ex},d, "j_{!*}^{Whit}"]\arrow[transform
+    canvas={xshift=-1.9ex}, d, "j_!^{Whit}"] \\
      \KL(T)_{\neglv} \arrow[r, "\sim", "FLE_T"] & \Whit_{\dneglv}(\Gr_{\check{T}}) \\
   \end{tikzcd}
 
@@ -113,11 +116,11 @@ for the local-to-global compatibilities to be discussed in \Ja{4}.\end{abstract}
 
   \begin{tikzcd}
     \KL(G)_{\poslv} \arrow[transform
-    canvas={xshift=0.9ex},d,"j_{!*}^{KM}"]\arrow[transform
-    canvas={xshift=-0.4ex}, d,"j_!^{KM}"] \arrow[r,"\tilde{FLE}_G" description]
+    canvas={xshift=1.9ex},d,"j_{!*}^{KM}"]\arrow[transform
+    canvas={xshift=-1.9ex}, d,"j_!^{KM}"] \arrow[r,"\tilde{FLE}_G" description]
     & \Whit_{\dposlv}(\Gr_{\check{G}}) \arrow[transform
-    canvas={xshift=0.9ex},d, "j_{!*}^{Whit}"]\arrow[transform
-    canvas={xshift=-0.4ex}, d, "j_!^{Whit}"] \\
+    canvas={xshift=1.9ex},d, "j_{!*}^{Whit}"]\arrow[transform
+    canvas={xshift=-1.9ex}, d, "j_!^{Whit}"] \\
     \KL(T)_{\poslv} \arrow[r, "\sim", "\tilde{FLE}_T"] & \Whit_{\dposlv}(\Gr_{\check{T}}) \\
   \end{tikzcd}
 
@@ -158,23 +161,77 @@ for the local-to-global compatibilities to be discussed in \Ja{4}.\end{abstract}
 Let us begin by recalling from \Ja{3} the
 semi-infinite cohomology functor
 
-  $$C_* = C^{\frac{\infty}{2}}(\Lnm^+, -),$$
+  $$C_* = C^{\semiinf}(\Lnm^+, -),$$
 
   in terms of which we can define $j_!^{KM}$ and $j_{!*}^{KM}$, via the following diagram:
 
 % TODO swap to more traditional N^-(K)T(O) notation?
   \begin{tikzcd}
     j_{\{!,!*\}}^{KM} : \affgmod_{\poslv}^{\LG^+} \ar[equal, d] \arrow[r, transform
-    canvas={yshift=0.9ex}, "\phi_!"] \arrow[r, transform
-    canvas={yshift=-0.4ex}, "\phi_{!*}"]&
+    canvas={yshift=1.9ex}, "\phi_!"] \arrow[r, transform
+    canvas={yshift=-1.9ex}, "\phi_{!*}"]&
     (\affgmod_{\poslv})_{\LNm\LT^+} \arrow[r, "C_*"] &
       (\afftmod_{\poslv})_{\LT^+} \ar[equal, d] \\
     \KL(G)_{\poslv}  & & \KL(T)_{\poslv} \\
   \end{tikzcd}
 
-Here we have used the fact that invariants and co-invariants are the same, as
-well as the fact that $C_*$ is well-behaved at the positive level. Thus we have
-reduced the definition of $j_!^{KM}$ and $j_{!*}^{KM}$ to the specification of
+Here we have used the fact that invariants and co-invariants coincide, as well
+as the fact that $C_*$ is well-behaved at the positive level. Thus, at the
+positive level we have reduced the definition of $j_!^{KM}$ and $j_{!*}^{KM}$ to
+the specification of
 $\phi_!$ and $\phi_{!*}$.
+
+\subsection{The functors $\phi_{!}$ and $\phi_{!*}$ by convolution}
+The functors $\phi_!$ and $\phi_{!*}$ map $\LG+$
+invariants to $\LNm\LT^+$-coinvariants, and hence exhibit a universal nature:
+both are given by convolution with an object of
+
+  \begin{tikzcd}
+    \DMod(\Gr_G)_{\LNm\LT^+} \arrow[r,"\sim"] & \DMod(\Gr_G)^{\LN\LT^+}.
+  \end{tikzcd}
+
+  The appearance of the affine grassmannian as underlying geometry for our
+  $\DMod$ category corresponds to the fact that in the domain of the functors
+  $\phi_{\{!,!*\}}$ we have passed to
+  $\LG^+$-invariants; by the action of convolution by anything in this category,
+  we can pass to $\LNm\LT^+$-coinvariants so as to land in the desired codomain.
+
+  In order to specify the objects we will convolve against, consider the
+  inclusion:
+
+  \begin{tikzcd}
+    S_{Ran}^0 \arrow[r,hookrightarrow,"j"] & \overline{S_{Ran}^0} \\
+    j_!(\omega_{S_{Ran}^0}) & \IC^{\semiinf} \\
+  \end{tikzcd}
+
+  Whether over a point, or allowing the points to move over the Ran space, we
+  have an inclusion of the corresponding $\DMod$ categories:
+
+
+  \begin{tikzcd}
+    \DMod(\Gr_G)_{\LNm\LT^+} \arrow[r,"\sim"] & \DMod(\Gr_G)^{\LN\LT^+}. \\
+    & \DMod(\overline{S^0})^{\LN\LT^+} \arrow[u,hookrightarrow]\\
+  \end{tikzcd}
+
+  blah blah
+
+  \begin{tikzcd}
+    \Whit_{\poslv}^!(\Gr_G) \arrow[d,transform
+    canvas={xshift=1.9ex},"j_!^{whit}"] \arrow[d,transform
+    canvas={xshift=-1.9ex},"j_{!*}^{whit}"] \\  %\arrow[d,"j_!^{whit}, j_{!*}^{whit}"] \\
+    \DMod(\Gr_T)
+  \end{tikzcd}
+
+  \subsection{$j_!^{whit,\lambda}$ and $j_{!*}^{whit,\lambda}$}
+
+  \begin{tikzcd}
+    S^{-,\lambda} \arrow[r,hookrightarrow,"j"] & \overline{S^{-,\lambda}} \\
+    j_!(\omega_{S^{-,\lambda}}) & \IC^{\semiinf+\lambda} \\
+  \end{tikzcd}
+
+  \begin{tikzcd}
+    \mathcal{F} \mapsto & \Gamma_{dR}(\Gr_G, \mathcal{F} \otimes -)
+  \end{tikzcd}
+
 
 \end{document}
