@@ -1,0 +1,103 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm,amsrefs}
+\usepackage{tikz-cd}
+
+\newcommand\Wh[1]{\textsc{Wh}-#1}
+\newcommand\Ja[1]{\textsc{Ja}-#1}
+\title{Winter Local Langlands \textsc{\Wh{5}}}
+
+
+\newcommand\LT{\mathfrak{LT}}
+\newcommand\LN{\mathfrak{LN}}
+\newcommand\LNm{\mathfrak{L}(\mathfrak{N}^-)}
+\newcommand\Lnm{\mathfrak{L}(\mathfrak{n}^-)}
+\newcommand\LG{\mathfrak{LG}}
+\newcommand\Bun{\mathbf{Bun}}
+\newcommand\afftmod{\hat{\mathfrak{t}}-\mathbf{Mod}}
+\newcommand\affgmod{\hat{\mathfrak{g}}-\mathbf{Mod}}
+\newcommand\DMod{\mathbf{Dmod}}
+\newcommand\IC{\mathbf{IC}}
+\newcommand\Gr{\mathbf{Gr}}
+\newcommand\semiinf{\frac{\infty}{2}}
+\newcommand\KL{\mathbf{KL}}
+\newcommand\Whit{\mathbf{Whit}}
+\newcommand\neglv{-\kappa}
+\newcommand\poslv{\kappa}
+\newcommand\dneglv{-\check{\kappa}}
+\newcommand\dposlv{\check{\kappa}}
+
+\begin{document}
+
+\begin{abstract}Literally what was written on the boards, and nothing else.\end{abstract}
+
+  \maketitle
+
+  \begin{tikzcd}
+    \KL(G)_{\neglv} \arrow[d,"j_!^{KM,Lus}"] \arrow[r,"FLE_G" description]
+     & \Whit_{\dneglv}(\Gr_{\check{G}}) \arrow[d, "j_!^{Whit,Lus}"] \\
+     \KL(T)_{\neglv} \arrow[r, "\sim", "FLE_T"] & \Whit_{\dneglv}(\Gr_{\check{T}}) \\
+  \end{tikzcd}
+
+  \begin{tikzcd}
+    \KL(G)_{\neglv} \arrow[transform
+    canvas={xshift=1.9ex},d,"j_{!*}^{KM}"]\arrow[transform
+    canvas={xshift=-1.9ex}, d,"j_!^{KM}"] \arrow[r,"FLE_G" description]
+    & \Whit_{\dneglv}(\Gr_{\check{G}}) \arrow[transform
+    canvas={xshift=1.9ex},d, "j_{!*}^{Whit}"]\arrow[transform
+    canvas={xshift=-1.9ex}, d, "j_!^{Whit}"] \\
+     \KL(T)_{\neglv} \arrow[r, "\sim", "FLE_T"] & \Whit_{\dneglv}(\Gr_{\check{T}}) \\
+  \end{tikzcd}
+
+  \begin{tikzcd}
+    \KL(G)_{\poslv} \arrow[transform
+    canvas={xshift=1.9ex},d,"j_{!*}^{KM}"]\arrow[transform
+    canvas={xshift=-1.9ex}, d,"j_!^{KM}"] \arrow[r,"\tilde{FLE}_G" description]
+    & \Whit_{\dposlv}(\Gr_{\check{G}}) \arrow[transform
+    canvas={xshift=1.9ex},d, "j_{!*}^{Whit}"]\arrow[transform
+    canvas={xshift=-1.9ex}, d, "j_!^{Whit}"] \\
+    \KL(T)_{\poslv} \arrow[r, "\sim", "\tilde{FLE}_T"] & \Whit_{\dposlv}(\Gr_{\check{T}}) \\
+  \end{tikzcd}
+
+% TODO swap to more traditional N^-(K)T(O) notation?
+  \begin{tikzcd}
+    j_{\{!,!*\}}^{KM} : \affgmod_{\poslv}^{\LG^+} \ar[equal, d] \arrow[r, transform
+    canvas={yshift=1.9ex}, "\phi_!"] \arrow[r, transform
+    canvas={yshift=-1.9ex}, "\phi_{!*}"]&
+    (\affgmod_{\poslv})_{\LNm\LT^+} \arrow[r, "C_*"] &
+      (\afftmod_{\poslv})_{\LT^+} \ar[equal, d] \\
+    \KL(G)_{\poslv}  & & \KL(T)_{\poslv} \\
+  \end{tikzcd}
+
+  \begin{tikzcd}
+    \DMod(\Gr_G)_{\LNm\LT^+} \arrow[r,"\sim"] & \DMod(\Gr_G)^{\LN\LT^+}.
+  \end{tikzcd}
+
+  \begin{tikzcd}
+    S_{Ran}^0 \arrow[r,hookrightarrow,"j"] & \overline{S_{Ran}^0} \\
+    j_!(\omega_{S_{Ran}^0}) & \IC^{\semiinf} \\
+  \end{tikzcd}
+
+  \begin{tikzcd}
+    \DMod(\Gr_G)_{\LNm\LT^+} \arrow[r,"\sim"] & \DMod(\Gr_G)^{\LN\LT^+}. \\
+    & \DMod(\overline{S^0})^{\LN\LT^+} \arrow[u,hookrightarrow]\\
+  \end{tikzcd}
+
+  \begin{tikzcd}
+    \Whit_{\poslv}^!(\Gr_G) \arrow[d,transform
+    canvas={xshift=1.9ex},"j_!^{whit}"] \arrow[d,transform
+    canvas={xshift=-1.9ex},"j_{!*}^{whit}"] \\  %\arrow[d,"j_!^{whit}, j_{!*}^{whit}"] \\
+    \DMod(\Gr_T)
+  \end{tikzcd}
+
+  \begin{tikzcd}
+    S^{-,\lambda} \arrow[r,hookrightarrow,"j"] & \overline{S^{-,\lambda}} \\
+    j_!(\omega_{S^{-,\lambda}}) & \IC^{\semiinf+\lambda} \\
+  \end{tikzcd}
+
+  \begin{tikzcd}
+    \mathcal{F} \mapsto & \Gamma_{dR}(\Gr_G, \mathcal{F} \otimes -)\\
+  \end{tikzcd}
+
+
+\end{document}

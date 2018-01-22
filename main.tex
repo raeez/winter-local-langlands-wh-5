@@ -1,8 +1,9 @@
 \documentclass[12pt]{amsart}
 
-\input{preamble.tex}
-%\input{mathmacros.tex}
-%\input{authors.tex}
+\usepackage{amsmath,amssymb,amsthm,amsrefs}
+\usepackage{tikz-cd}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{rmk}[thm]{Remark}
 
 \newcommand\Wh[1]{\textsc{Wh}-#1}
 \newcommand\Ja[1]{\textsc{Ja}-#1}
@@ -30,24 +31,11 @@
 
 \begin{document}
 
-  %%%%%%%%%%%%%%%%
-  %% Title etc. %%
-  %%
-
 \begin{abstract}The purpose of this talk (\Wh{5}) is two-fold: first we will set
 up the context needed to attack the FLE; second, we will address material needed
 for the local-to-global compatibilities to be discussed in \Ja{4}.\end{abstract}
 
   \maketitle
-  %\tableofcontents
-  %\mbox{}
-  %\input{nomenclature.tex}
-  %\printnomenclature
-
-  %%%%%%%%%%%%%%%%%%%%%%
-  %% body of document %%
-  %%
-
 
   % \begin{rmk}
   %   This talk has been cut down due to a change in the planned exposition.
