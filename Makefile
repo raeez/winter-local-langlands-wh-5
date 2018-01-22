@@ -5,7 +5,7 @@
 AUTHOR :=Raeez Lorgat
 
 # -- project files and directories
-TEXMAIN      :=main
+TEXMAIN      :=wh5
 TEXSUITEMAIN :=$(TEXMAIN).tex.latexmain
 BIB          :=bib
 SECTIONS     :=sections

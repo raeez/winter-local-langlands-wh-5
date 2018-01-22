@@ -143,7 +143,7 @@ for the local-to-global compatibilities to be discussed in \Ja{4}.\end{abstract}
     in the global setting to a series of commutative cubes.
   \end{rmk}
 
-\section{Recollections on definitions of the functors $j_!$ and $j_{!*}$}
+\section{Definitions of the functors $j_!$ and $j_{!*}$ on the Kac-Moody Side}
 \subsection{$j_{\{!,!*\}}^{KM}$ at the positive level}
 Let us begin by recalling from \Ja{3} the
 semi-infinite cohomology functor
@@ -251,13 +251,13 @@ both are given by convolution with an object of
 
 
   \begin{rmk}
-  What is the a-priori conceptual reason for expecting these
+  We have not said anything on the a-priori conceptual reason for expecting these
   functors as-defined on either side (KM and Whittaker) to match up? One
   possible answer: follow local-to-global compatabilities. Another way might be
   to see it via the original 2-categorical formalism.
   \end{rmk}
 
-\subsection{$j_{\{!,!*\}}^{whit}$ at the positive level}
+\subsection{$j_{\{!,!*\}}^{whit}$ on the Whittaker side}
 
 We want a functor from the Whittaker category on the affine
 grassmannian\footnotemark\footnotetext{As remarked earlier, since the Whittaker
@@ -267,22 +267,67 @@ torus\footnotemark\footnotetext{Since the torus has no unipotent part, the Whit
 functor is vacuous}.
 
   \begin{tikzcd}
-    \Whit_{\poslv}^!(\Gr_G) \arrow[d,transform
+    \Whit_{\poslv}^!(\Gr_{\check{G}}) \arrow[d,transform
     canvas={xshift=1.9ex},"j_!^{whit}"] \arrow[d,transform
     canvas={xshift=-1.9ex},"j_{!*}^{whit}"] \\  %\arrow[d,"j_!^{whit}, j_{!*}^{whit}"] \\
-    \DMod(\Gr_T)
+    \DMod(\Gr_{\check{T}})
   \end{tikzcd}
 
+  \begin{rmk}
+  Once again, we must reproduce the analogous structure from the Kac-Moody side
+  factorazably. Here we will only indicate the structure at a point, but since
+  the objects introduced posess a factorization structure, it should be clear
+  how to extend the structure over the Ran space.
+  \end{rmk}
+
+  The affine grassmannian for the torus $\check{T}$ is a discrete set indexed by
+  the coweights of $\check{T}$; hence we will define our functors $j_{\{!,!*\}}$
+  separately for each coweight.
+
   \subsection{$j_!^{whit,\lambda}$ and $j_{!*}^{whit,\lambda}$}
+  Recall our underlying geometry of sheaves over the affine grassmannian with an
+  equivariance condition. Once again we start with the zero semi-infinite orbit
+  $S^0$, but in addition we will also consider the various translates by
+  coweights $\lambda$, denoted $S^{0,\lambda}$. In lieu of $\LN$, we need to
+  consider equivariance with respect to $\LNm$, which we'll denote by
+  $S^{-,\lambda}$.  The analogous inclusion of orbits into their closures, along
+  with the two sheaves we will consider for convolution, becomes:
 
   \begin{tikzcd}
     S^{-,\lambda} \arrow[r,hookrightarrow,"j"] & \overline{S^{-,\lambda}} \\
     j_!(\omega_{S^{-,\lambda}}) & \IC^{\semiinf+\lambda} \\
   \end{tikzcd}
 
+  We stress that we have translated the analogous objects from the zero-semi-infinite
+  orbit; in particular, here $\IC^{\semiinf+\lambda}$ is the fiber of the sheaf introduced in
+  \Ja-5, restricted to a copy of the affine grassmannian over one point
+  of the curve.
+
+  \begin{rmk}
+    We warn again that $\IC^{\semiinf+\lambda}$ is \textbf{not} the $\IC$-extension in the t-structure of a
+    single copy of the grassmannian. One needs to perform the extension globally
+    over the Ran space (i.e.\ allowing the points to move), followed by
+    restriction to the fiber over a given point of the curve and a subsequent
+    shift by $\lambda$.
+  \end{rmk}
+
+  The functors $j^{whit}_{\{!,!*\}}$ are then given by mapping any given
+  Whittaker sheaf $\mathcal{F}$ to the de Rahm cohomology along the affine
+  grassmannian of the shriek-tensor-product of $\mathcal{F}$ with either of the
+  two objects introduced above.
+
   \begin{tikzcd}
-    \mathcal{F} \mapsto & \Gamma_{dR}(\Gr_G, \mathcal{F} \otimes -)
+    \mathcal{F} \mapsto & \Gamma_{dR}(\Gr_G, \mathcal{F} \otimes^! -)
   \end{tikzcd}
 
+  In particular, starting with an $\LN$ equivariant sheaf (hence a geometric
+  object with truly infinite dimensional support), we intersect it with
+  something equivariant with respect to $\LNm$. On compact objects this has the
+  effect of producing a geometric object supported on the closure of the
+  intersection of particular $\LN$ and $\LNm$ orbits. This intersection is
+  finite dimensional, hence the above de Rahm cohomology is taken over a finite
+  dimensional variety.
+
+  These are the Jacquet functors.
 
 \end{document}
