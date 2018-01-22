@@ -162,11 +162,11 @@ semi-infinite cohomology functor
     \KL(G)_{\poslv}  & & \KL(T)_{\poslv} \\
   \end{tikzcd}
 
-Here we have used the fact that invariants and co-invariants coincide, as well
-as the fact that $C_*$ is well-behaved at the positive level. Thus, at the
-positive level we have reduced the definition of $j_!^{KM}$ and $j_{!*}^{KM}$ to
-the specification of
-$\phi_!$ and $\phi_{!*}$.
+  Here we have used the fact that invariants and co-invariants (conjecturally)
+  coincide via an equivalance, as well as the fact that $C_*$ is well-behaved at
+  the positive level. Thus, at the positive level we have reduced the definition
+  of $j_!^{KM}$ and $j_{!*}^{KM}$ to the specification of
+  $\phi_!$ and $\phi_{!*}$.
 
 \subsection{The functors $\phi_{!}$ and $\phi_{!*}$ by convolution}
 The functors $\phi_!$ and $\phi_{!*}$ map $\LG+$
@@ -183,24 +183,88 @@ both are given by convolution with an object of
   $\LG^+$-invariants; by the action of convolution by anything in this category,
   we can pass to $\LNm\LT^+$-coinvariants so as to land in the desired codomain.
 
-  In order to specify the objects we will convolve against, consider the
-  inclusion:
+  \begin{rmk}
+    Given that we do not yet have the factorizable equivalence between
+    invariants and co-invariants used above, it is worth noting that we will
+    only need the functor in one direction, namely, the actual diagram we need
+    is
+  \begin{tikzcd}
+    \DMod(\Gr_G)_{\LNm\LT^+} & \arrow[l] \DMod(\Gr_G)^{\LN\LT^+}.
+  \end{tikzcd}
+  \end{rmk}
+
+  In order to specify these two functors, we can thus specify two factorizable
+  objects we will convolve against. To this end, consider the inclusion
 
   \begin{tikzcd}
     S_{Ran}^0 \arrow[r,hookrightarrow,"j"] & \overline{S_{Ran}^0} \\
-    j_!(\omega_{S_{Ran}^0}) & \IC^{\semiinf} \\
   \end{tikzcd}
 
-  Whether over a point, or allowing the points to move over the Ran space, we
+  of the zero semi-infinite orbit into its closure (where Ran here again denotes
+  the factorizable/global version). We
   have an inclusion of the corresponding $\DMod$ categories:
 
-
   \begin{tikzcd}
-    \DMod(\Gr_G)_{\LNm\LT^+} \arrow[r,"\sim"] & \DMod(\Gr_G)^{\LN\LT^+}. \\
+    \DMod(\Gr_G)_{\LNm\LT^+} & \arrow[l] \DMod(\Gr_G)^{\LN\LT^+}. \\
     & \DMod(\overline{S^0})^{\LN\LT^+} \arrow[u,hookrightarrow]\\
   \end{tikzcd}
 
-  blah blah
+  One of our objects will nominally be built from the dualizing object.
+
+  \begin{rmk}
+
+  Recall that in order to even define a restriction functor
+  over the Ran space---which is a colimit---we have
+  to consider maps
+
+  \begin{tikzcd}
+    S_{X^I}^0 \arrow[d] \\
+    X^I
+  \end{tikzcd}
+
+  for finite sets $I$ over a smooth curve $X$. In general, there is no base
+  change between shriek-pushforward and shriek-pullback, but one can prove a
+  theorem here that in fact base-change is well-defined; $j_!$ over the entire
+  Ran space will in effect realize $j_!$ over any given $X^I$---i.e.\ $j_!$
+  behaves well with respect to the given pullback diagrams, hence our desired
+  object is factorizable.
+  \end{rmk}
+
+  The second object will be the semi-infinite $\IC^{\semiinf}$ sheaf introduced
+  in a previous talk, hence our two functors will be built from convolution
+  against:
+
+  \begin{tikzcd}
+    %S_{Ran}^0 \arrow[r,hookrightarrow,"j"] & \overline{S_{Ran}^0} \\
+    j_!(\omega_{S_{Ran}^0}) & \IC^{\semiinf} \\
+  \end{tikzcd}
+
+  \begin{rmk}
+    The $j_!$ functor (at the positive level) realizes semi-infinite cohomology:
+    to see this, note we took the object yielding our $j_!$ functor, considered it
+    as part of the $\LN\LT^+$ invariant category, moved it to the $\LNm\LT^+$
+    co-invariant category and then convolved against it. This produces a functor
+    equivalent to forgetting $\LG^+$ equivariance followed by projection.
+  \end{rmk}
+
+  Next we will define the analagous functors on the Whittaker category.
+
+
+  \begin{rmk}
+  What is the a-priori conceptual reason for expecting these
+  functors as-defined on either side (KM and Whittaker) to match up? One
+  possible answer: follow local-to-global compatabilities. Another way might be
+  to see it via the original 2-categorical formalism.
+  \end{rmk}
+
+\subsection{$j_{\{!,!*\}}^{whit}$ at the positive level}
+
+We want a functor from the Whittaker category on the affine
+grassmannian\footnotemark\footnotetext{As remarked earlier, since the Whittaker
+category is geometric the twisting parameter will play no role} to the Whittaker
+category for the affine grassmannian of the
+torus\footnotemark\footnotetext{Since the torus has no unipotent part, the Whit
+functor is vacuous}.
 
   \begin{tikzcd}
     \Whit_{\poslv}^!(\Gr_G) \arrow[d,transform
